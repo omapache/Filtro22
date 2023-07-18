@@ -42,13 +42,26 @@ export async function DELETE(div,id,url){
         body: JSON.stringify(data)
     };
     if(url == "Departamentos"){
-        await fetch(`${URL}/${url}/${id}`, config);
-        await fetch(`${URL}/${url}?departamentoId=${id}`, config);
+    await fetch(`${URL}/Departamentos/${id}`, config);
+    let data = await (await fetch(`${URL}/Ciudades?departamentoId=${id}`)).json();
+    data.forEach(element => {
+        eliminarciudades(element.id, element)
+    })
     }else if(url =="Ciudades"){
         await fetch(`${URL}/${url}/${id}`,config).json();
     }
 
 }
+async function eliminarciudades(id,data){
+        let config = {
+            method: 'DELETE',
+            headers: headers,
+            body: JSON.stringify(data)
+        };
+        await fetch(`${URL}/Ciudades/${id}`, config).json();
+    };
+
+
 
 /* ************************* METODO PUT(ACTUALIZAR) ************************* */
 export async function PUT(data,id,url) {
