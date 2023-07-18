@@ -7,6 +7,26 @@
     {
       "id": 2,
       "nomDepartamento": "Cundinamarca"
+    },
+    {
+      "nomDepartamento": "a",
+      "coordenadas": {},
+      "id": 3
+    },
+    {
+      "nomDepartamento": "a",
+      "coordenadas": {},
+      "id": 4
+    },
+    {
+      "nomDepartamento": "a",
+      "coordenadas": {},
+      "id": 5
+    },
+    {
+      "nomDepartamento": "a",
+      "coordenadas": {},
+      "id": 6
     }
   ],
   "Ciudades": [
