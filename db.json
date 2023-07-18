@@ -1,0 +1,64 @@
+{
+  "Departamentos": [
+    {
+      "nomDepartamento": "santander",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "nomDepartamento": "Cundinamarca"
+    }
+  ],
+  "Ciudades": [
+    {
+      "nomCiudad": "Bucaramanga",
+      "imagen": "https://santandercompetitivo.org/imagenes/vco_noticias/noti_6f169efdbad3e83f60fece917ca78e9dfe0ed2a2.jpg",
+      "departamentoId": "1",
+      "coordenadas": {
+        "lat": 7.1255169,
+        "lon": -73.1182624
+      },
+      "id": 1
+    },
+    {
+      "nomCiudad": "cali",
+      "imagen": "https://blog.uber-cdn.com/cdn-cgi/image/width=2160,height=1080,quality=80,onerror=redirect,format=auto/wp-content/uploads/2018/06/CO_X-lugares-turi%CC%81sticos-de-Cali-que-te-dejara%CC%81n-sin-palabras.jpg",
+      "departamentoId": "1",
+      "coordenadas": {
+        "lat": 3.4520339,
+        "lon": -76.5329352
+      },
+      "id": 2
+    },
+    {
+      "id": 3,
+      "nomCiudad": "Bogota",
+      "departamentoId": 2,
+      "imagen": "https://www.ciencuadras.com/blog/wp-content/uploads/2022/06/Destacado_Que-tanto-sabes-de-tu-barrio.jpg",
+      "coordenadas": {
+        "lat": 4,
+        "lon": 72
+      }
+    },
+    {
+      "id": 4,
+      "nomCiudad": "Cajica",
+      "departamentoId": 2,
+      "imagen": "https://www.diccionariodecolombia.expert/wp-content/uploads/2020/04/cajicaf.png",
+      "coordenadas": {
+        "lat": 4,
+        "lon": 72
+      }
+    },
+    {
+      "nomCiudad": "medellin",
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Medellin.jpg/1200px-Medellin.jpg",
+      "departamentoId": 1,
+      "coordenadas": {
+        "lat": 6.2443382,
+        "lon": -75.573553
+      },
+      "id": 5
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <style id="style"></style>
+</head>
+<body>
+  <!--  ************************* BARRA DE NAVEGACION ************************* -->
+    <nav class="navbar">
+        <div class="container d-flex d-flex justify-content-center align-items-center text-center">
+          <i class="bi bi-rocket-takeoff"></i>
+          <h1>GESTOR DE CIUDADES<h1>
+          <i class="bi bi-rocket-takeoff"></i>
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+            <button id="botonCustomStyle" style="font-size: 50px; position: absolute; right: 0%; top: 10%;"><i class="bi bi-circle-half"></i></button>
+        </div>
+
+    </nav>
+
+
+    <div class="container text-center">
+
+        <!--  ************************* TABLA DE VISTA DE DEPARTAMENTOS ************************* -->
+        <h2 id="tituloDepartamento">Departamentos</h2>
+        <div class="row">
+
+            <div class="col">
+                <!--  ************************* BOTON PUT DEPARTAMENTO ************************* -->
+                <div class="col">
+                    <div class="d-flex mt-2 align-items-center justify-content-center">
+                    <input type="submit" data-bs-toggle="modal" data-bs-target="#modalModificarDepartamento" class="btn active visually-hidden" id="ActualizarRutas" value="Actualizar Departamento">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <!--  ************************* BOTON AGREGAR DEPARTAMENTO ************************* -->
+                <div class="d-flex mt-2 align-items-center justify-content-center">
+                    <button class="btn active" data-bs-toggle="modal" data-bs-target="#modalAgregarDepartamento">agregar Departamento</button>
+                </div>
+            </div>
+
+            <div class="col">
+                <!--  ************************* BOTON DELETE DEPARTAMENTO ************************* -->
+                <div class="col">
+                    <div class="d-flex mt-2 align-items-center justify-content-center">
+                    <input type="submit" class="btn active visually-hidden" id="EliminarRutas" value="Eliminar Departamento">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="vistaRutas" class="d-flex justify-content-center align-items-center text-center">
+          
+          <table class="table table-hover table-light table-striped border-bottom text-info mt-4" id="tablaClientes">
+            <thead>
+                <tr>
+                <th></th>
+                <th>ID</th>
+                <th>Ruta</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+        </div>
+        <!--  ************************* DROPDOWN DE LAS CIUDADES ************************* -->
+        <div class="mb-3">
+            <label class="form-label">SELECCIONE DEPARTAMENTO PARA MOSTRAR CIUDADES</label>
+            <div class="row">
+              <div class="col"></div>
+              <div class="col">
+                <select class="form-select" id="categoryId" name="categoryId"></select>
+              </div>
+              <div class="col"></div>
+            </div>
+        </div>  
+        <div class="row">
+          
+           <!--  ************************* BOTON POST CIUDAD ************************* -->
+           <div class="col">
+            <div class="d-flex align-items-center justify-content-center">
+              <input type="submit" data-bs-toggle="modal" data-bs-target="#modalAgregarCiudad" class="btn active visually-hidden" id="AgregarPunto" value="Agregar Ciudad">
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+        <!--  ************************* CONTENEDOR DE CARDS CIUDADES ************************* -->
+        <div class="contenido">
+          <h2 id="tituloPuntos" class="visually-hidden">PUNTOS</h2>
+          <div id="Cbody" class="row"></div>
+        </div>
+    </div>
+    
+      <!--  ************************* MODAL AGREGAR DEPARTAMENTO ************************* -->
+      <div class="modal fade" id="modalAgregarDepartamento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">AGREGAR DEPARTAMENTO</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="col-12" id="form">
+                    <div class="mb-3">
+                      <label class="form-label">Nombre del Departamento</label>
+                      <input type="text" class="form-control" id="NomRuta" name="nomDepartamento">
+                    </div>
+                   
+                    <div class="d-flex align-items-center justify-content-center">
+                      <input type="submit" class="btn btn-primary" data-accion="Registrar" value="Crear Ruta">
+                    </div>
+                  </form> 
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--  ************************* MODAL MODIFICAR DEPARTAMENTO ************************* -->
+      <div class="modal fade" id="modalModificarDepartamento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">MODIFICAR DEPARTAMENTO</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form class="col-12" id="formActualizarRutas">
+                <div class="mb-3">
+                  <label class="form-label">Nombre del departamento</label>
+                  <input type="text" class="form-control" id="NomRuta" name="nomDepartamento">
+                </div>
+                
+              <div class="d-flex align-items-center justify-content-center">
+                <input type="submit" class="btn btn-primary" id="actualizarRutaForm" data-accion="Actualizar" value="Actualizar">
+              </div>
+            </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--  ************************* MODAL AGREGAR CIUDAD ************************* -->
+      <div class="modal fade" id="modalAgregarCiudad" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">AGREGAR CIUDAD</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form class="col-12" id="formAgregarPunto">
+                <div class="mb-3">
+                  <label class="form-label">Nombre de la ciudad</label>
+                  <input type="text" class="form-control" id="NomRuta" name="nomCiudad">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Imagen de la ciudad</label>
+                  <input type="text" class="form-control" id="Imagen" name="imagen">
+                </div>
+              <div class="d-flex align-items-center justify-content-center">
+                <input type="submit" class="btn btn-primary" data-accion="Registrar" id="botonAgregarPunto" value="Actualizar">
+              </div>
+            </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--  ************************* MODAL MODIFICAR CIUDAD ************************* -->
+      <div class="modal fade" id="modalModificarCiudad" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">MODIFICAR CIUDAD</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form class="col-12" id="formActualizar">
+                <div class="mb-3">
+                  <label class="form-label">Nombre de la ciudad</label>
+                  <input type="text" class="form-control" id="NomRuta" name="nomCiudad">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Imagen de la ciudad</label>
+                  <input type="text" class="form-control" id="Imagen" name="imagen">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Departamentos</label>
+                  <select class="form-select" id="categoryId" name="departamentoId"></select>
+              </div>
+              <div class="d-flex align-items-center justify-content-center">
+                <input type="submit" class="btn btn-primary" id="Actualizar" value="Actualizar">
+              </div>
+            </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="../js/main.js" type="module"></script>
+</html>

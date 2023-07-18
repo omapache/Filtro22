@@ -1,0 +1,21 @@
+h1{
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+}
+nav{
+    background-color: rgb(97, 179, 211);
+}
+.bi-rocket-takeoff{
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+}
+button {
+    background: none;
+    border: 0;
+    color: inherit;
+    /* cursor: default; */
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+}
